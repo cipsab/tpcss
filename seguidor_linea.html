@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto: Robot Seguidor de Línea</title>
+    <link rel="stylesheet" href="./linea.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="main-nav">
+            <ul>
+                <li class="menu-item">
+                    <img class="menu-icon" src="./imagen/fondo-futurista-tecnologia-degradada_23-2149122416.avif" alt="Fondo futurista de tecnología">
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li class="menu-item">
+                    <img class="menu-icon" src="./imagen/robotseguidor.webp" alt="Robot seguidor de línea">
+                    <a href="seguidor_linea.html">Seguidor de Línea</a>
+                </li>
+                <li class="menu-item">
+                    <img class="menu-icon" src="./imagen/images.jpeg" alt="Robot de lucha sumo">
+                    <a href="lucha_sumo.html">Robot de Lucha Sumo</a>
+                </li>
+                <li class="menu-item">
+                    <img class="menu-icon" src="./imagen/descarga.jpeg" alt="Proyectos futuros de robótica">
+                    <a href="./proyectosfuturos.html">Proyectos Futuros</a>
+                </li>
+            </ul>
+        </nav>
+        </header>
+
+    <main class="container">
+        <section class="project-intro">
+            <h1>Proyecto: Robot Seguidor de Línea</h1>
+            <img class="hero-image"
+                src="https://makeblock.com.ar/wp-content/uploads/que-se-necesita-para-hacer-un-robot-con-arduino.webp"
+                alt="Diagrama de un robot seguidor de línea con Arduino">
+            <p>Un **robot seguidor de línea** es un vehículo autónomo diseñado para seguir una línea marcada en el
+                suelo, generalmente de color negro sobre un fondo blanco. Utiliza sensores infrarrojos para detectar la
+                línea y ajustar su movimiento.</p>
+        </section>
+
+        <section class="project-section">
+            <h2>Componentes Utilizados</h2>
+            <ul class="componentes-list">
+                <li>Placa Arduino UNO</li>
+                <li>2 Motores DC con ruedas</li>
+                <li>2 Sensores infrarrojos (IR)</li>
+                <li>Chasis del robot</li>
+                <li>Driver de motor L298N</li>
+                <li>Batería o power bank</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h2>Funcionamiento</h2>
+            <p>El robot detecta la línea utilizando los sensores infrarrojos. Cuando el sensor izquierdo detecta blanco
+                y el derecho negro, el robot gira hacia la derecha, y viceversa. Si ambos detectan negro, avanza recto.
+                Si ambos detectan blanco, se detiene.</p>
+        </section>
+
+        <section class="project-section">
+            <h2>Aplicaciones</h2>
+            <p>Estos robots son comúnmente usados en **competiciones educativas**, sistemas de **transporte automatizado** en
+                fábricas y proyectos de investigación sobre **navegación autónoma**.</p>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2023 Mi Robot Arduino. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

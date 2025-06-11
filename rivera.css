@@ -1,0 +1,404 @@
+/* --- Variables CSS para colores (Recomendado para temas) --- */
+:root {
+    --color-background-dark: #1a1a1a;        /* Fondo principal muy oscuro */
+    --color-text-light: #f0f0f0;             /* Texto claro general */
+    --color-primary-accent: #61afef;         /* Azul brillante para acentos y títulos principales */
+    --color-secondary-accent: #56b6c2;       /* Cian para subtítulos */
+    --color-highlight: #c678dd;              /* Púrpura/rosa para elementos destacados */
+    --color-nav-bg: #0d1117;                 /* Fondo muy oscuro para la navegación */
+    --color-container-bg: #21262d;           /* Gris oscuro para el contenedor principal */
+    --color-card-bg: #2d333b;                /* Gris oscuro para tarjetas de proyecto y tabla */
+    --color-border: #444c56;                 /* Color para bordes sutiles */
+    --color-link: #61afef;                   /* Azul para enlaces */
+    --color-link-hover: #80c4fa;             /* Azul más claro al pasar el mouse */
+    --color-button-bg: #ff9800;              /* Naranja para el botón */
+    --color-button-hover: #e68900;           /* Naranja más oscuro para el botón al pasar el mouse */
+}
+
+/* --- Estilos Generales --- */
+/* Eliminamos scroll-behavior: smooth; de aquí, JavaScript lo manejará */
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    overflow-x: hidden; /* Evita scroll horizontal en móviles */
+}
+
+/* Contenedor principal para el contenido */
+.container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background: var(--color-container-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Estilos de Encabezados --- */
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3em; /* Tamaño grande para el título principal */
+    color: var(--color-primary-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 2.4em;
+    color: var(--color-secondary-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    font-style: italic;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-border);
+    margin-top: 40px; /* Espacio para separar secciones */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--color-highlight);
+    margin-bottom: 15px;
+}
+
+/* --- Estilos de Párrafos --- */
+p {
+    margin-bottom: 1em;
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+/* --- Estilos de Enlaces --- */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+/* --- Estilos de Imágenes Generales (para el contenido, no iconos de nav) --- */
+img {
+    border-radius: 12px;
+    height: auto;
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    max-width: 600px; /* Ancho máximo para que no sea demasiado grande */
+    display: block; /* Para centrar con margin auto */
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+}
+
+/* --- Hero Banner (Sección de cabecera principal) --- */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://img.freepik.com/vector-gratis/fondo-futurista-tecnologia-degradada_23-2149122416.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+}
+
+/* Capa oscura encima de la imagen del banner */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Oscurece la imagen del banner */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenido superpuesto en el banner */
+.hero-content {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: white;
+    text-decoration: none;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón del banner */
+.hero-content .button {
+    display: inline-block;
+    padding: 15px 35px;
+    background-color: var(--color-button-bg);
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content .button:hover {
+    background-color: var(--color-button-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive para pantallas pequeñas del banner */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+    .hero-content .button {
+        padding: 12px 25px;
+        font-size: 0.9em;
+    }
+}
+
+/* --- Main Navigation (barra de navegación principal) --- */
+.main-nav {
+    background-color: var(--color-nav-bg);
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #1f232a;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover {
+    background-color: #323842;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item .menu-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 2px solid var(--color-highlight);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-item:hover .menu-icon {
+    transform: scale(1.1);
+    border-color: var(--color-primary-accent);
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--color-text-light);
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-highlight);
+}
+
+/* --- Secciones de Proyectos (`.projects-section`) --- */
+.projects-section {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.project-card {
+    background-color: var(--color-card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* --- Secciones de Precios (`.prices-section`) --- */
+.prices-section {
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: var(--color-card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: var(--color-text-light);
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+th {
+    background-color: #3e4451;
+    color: var(--color-text-light);
+    font-weight: bold;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+/* --- Estilos de la sección de contacto --- */
+.contact-info {
+    margin-top: 40px;
+    padding: 25px;
+    background-color: var(--color-card-bg);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.contact-info a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    background-color: var(--color-nav-bg);
+    color: #c9d1d9;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+    font-size: 0.9em;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px 15px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    /* Navegación */
+    .main-nav ul {
+        gap: 15px;
+    }
+
+    .menu-item {
+        padding: 8px 10px;
+    }
+
+    .menu-item .menu-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .main-nav a {
+        font-size: 1em;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu-item {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+}

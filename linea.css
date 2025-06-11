@@ -1,0 +1,267 @@
+
+/* --- Variables CSS para colores (Recomendado para temas y fácil mantenimiento) --- */
+:root {
+    --color-background-dark: #1a1a1a;        /* Fondo principal muy oscuro */
+    --color-text-light: #f0f0f0;             /* Texto claro general */
+    --color-primary-accent: #61afef;         /* Azul claro para acentos y títulos principales */
+    --color-secondary-accent: #98c379;       /* Verde suave para subtítulos */
+    --color-highlight: #e5c07b;              /* Dorado para elementos destacados o decorativos */
+    --color-nav-bg: #0d1117;                 /* Fondo de la barra de navegación */
+    --color-card-bg: #282c34;                /* Fondo para secciones o tarjetas de contenido */
+    --color-border: #3a3f4a;                 /* Color para bordes sutiles */
+    --color-button-primary: #ff9800;         /* Naranja para botones (si los hubiera) */
+    --color-button-hover: #e68900;           /* Naranja oscuro para hover de botones */
+}
+
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente moderna y legible */
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    margin: 0; /* Elimina el margen por defecto del body */
+    background-color: var(--color-background-dark); /* Fondo global oscuro */
+    color: var(--color-text-light); /* Color de texto claro */
+    overflow-x: hidden; /* Evita el scroll horizontal en dispositivos móviles */
+}
+
+/* Contenedor principal del contenido de la página */
+.container {
+    max-width: 960px; /* Ancho máximo para el contenido principal */
+    margin: 30px auto; /* Centra el contenedor horizontalmente y añade margen vertical */
+    padding: 20px; /* Espacio interno para el contenido */
+    background: var(--color-card-bg); /* Fondo oscuro para el área de contenido */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra suave para darle profundidad */
+}
+
+/* --- Estilos de Encabezados --- */
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 25px; /* Espacio debajo de los títulos */
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 2.8em; /* Tamaño de fuente grande para el título principal */
+    color: var(--color-primary-accent); /* Color azul claro para el h1 */
+    text-decoration: underline; /* Subrayado */
+    text-decoration-color: var(--color-highlight); /* Color del subrayado */
+    margin-top: 0; /* Elimina el margen superior por defecto de la etiqueta h1 */
+    padding-bottom: 10px; /* Espacio entre el texto y el subrayado */
+}
+
+h2 {
+    font-size: 2.2em;
+    color: var(--color-secondary-accent); /* Color verde suave para el h2 */
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    font-style: italic;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-border); /* Línea divisoria sutil */
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--color-highlight); /* Color dorado para el h3 */
+}
+
+/* --- Estilos de Párrafos --- */
+p {
+    margin-bottom: 1em; /* Espacio debajo de los párrafos */
+    text-align: justify; /* Texto justificado para una lectura más formal */
+    font-size: 1.1em; /* Tamaño de fuente ligeramente más grande */
+}
+
+/* --- Estilos de Imágenes (aplicado a imágenes dentro del contenido, no iconos de navegación) --- */
+img {
+    border-radius: 12px; /* Bordes redondeados para todas las imágenes */
+    height: auto; /* Mantiene la proporción de la imagen */
+    width: 100%; /* Las imágenes ocupan todo el ancho disponible en su contenedor */
+    max-width: 600px; /* Límite máximo de ancho para imágenes muy grandes */
+    display: block; /* Convierte la imagen en un bloque para poder centrarla */
+    margin: 20px auto; /* Centra la imagen horizontalmente y añade margen vertical */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+}
+
+/* Estilo específico para la imagen principal del encabezado del proyecto */
+.project-intro .hero-image {
+    max-width: 80%; /* Un poco más pequeña que las imágenes generales */
+    margin-bottom: 30px;
+    border: 3px solid var(--color-primary-accent); /* Borde destacado en color azul */
+}
+
+/* --- Lista de Componentes (`.componentes-list`) --- */
+.componentes-list {
+    list-style: none; /* Quita los puntos/números de la lista */
+    padding: 0;
+    margin: 20px 0;
+    background-color: #3e4451; /* Fondo gris azulado oscuro para la lista */
+    border-radius: 10px;
+    padding: 15px 25px; /* Espacio interno de la lista */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* Uso de CSS Grid para un diseño responsivo de la lista */
+    display: grid;
+    /* Crea columnas que se autoajustan: mínimo 200px, máximo 1fr (fracción del espacio disponible) */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 15px; /* Espacio entre los ítems (filas y columnas) */
+}
+
+.componentes-list li {
+    background-color: #4a505b; /* Fondo para cada ítem individual de la lista */
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 600; /* Texto un poco más grueso */
+    color: var(--color-text-light);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Sombra interna sutil */
+    text-align: center; /* Centra el texto dentro del ítem */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el mouse */
+}
+
+.componentes-list li:hover {
+    background-color: #5d636f; /* Cambio de color al pasar el mouse */
+}
+
+/* --- Barra de Navegación Principal (`.main-nav`) --- */
+.main-header {
+    background-color: var(--color-nav-bg); /* Fondo muy oscuro para el header que contiene la nav */
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra fuerte debajo de la nav */
+}
+
+.main-nav ul {
+    list-style: none; /* Elimina los puntos/viñetas de la lista */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Utiliza Flexbox para colocar los ítems uno al lado del otro */
+    justify-content: center; /* Centra los elementos de la lista horizontalmente */
+    gap: 30px; /* Espacio entre los ítems del menú */
+    flex-wrap: wrap; /* Permite que los ítems se envuelvan a la siguiente línea en pantallas pequeñas */
+}
+
+.menu-item {
+    display: flex; /* Convierte cada 'li' en un contenedor flex */
+    flex-direction: column; /* Apila el icono y el texto (icono arriba, texto abajo) */
+    align-items: center; /* Centra horizontalmente el icono y el texto dentro de cada 'li' */
+    text-align: center; /* Centra el texto */
+    padding: 10px 15px; /* Espacio alrededor del contenido del 'botón' de menú */
+    border-radius: 10px; /* Bordes redondeados para cada 'botón' */
+    background-color: #1f232a; /* Fondo gris oscuro para cada ítem de menú */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil para los ítems */
+}
+
+.menu-item:hover {
+    background-color: #323842; /* Fondo un poco más claro al pasar el mouse */
+    transform: translateY(-3px); /* Efecto de "elevación" sutil */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al elevarse */
+}
+
+.menu-item .menu-icon {
+    width: 60px; /* Tamaño de los iconos del menú */
+    height: 60px; /* Mantiene la proporción */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    border-radius: 50%; /* Hace que los iconos sean redondos */
+    margin-bottom: 8px; /* Espacio entre el icono y el texto */
+    border: 2px solid var(--color-highlight); /* Borde dorado alrededor del icono */
+    transition: transform 0.3s ease, border-color 0.3s ease; /* Transiciones para el icono */
+}
+
+.menu-item:hover .menu-icon {
+    transform: scale(1.1); /* Agranda el icono al pasar el mouse */
+    border-color: var(--color-primary-accent); /* Cambia el color del borde al pasar el mouse */
+}
+
+.main-nav a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    font-weight: bold;
+    font-size: 1.1em; /* Tamaño del texto del enlace de navegación */
+    color: var(--color-text-light); /* Color del texto claro por defecto */
+    transition: color 0.3s ease; /* Transición suave para el color del texto */
+}
+
+.main-nav a:hover {
+    color: var(--color-primary-accent); /* Cambia el color del texto a azul claro al pasar el mouse */
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    background-color: var(--color-nav-bg); /* Mismo fondo que la navegación */
+    color: #c9d1d9; /* Color de texto ligeramente más claro */
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px; /* Espacio encima del pie de página */
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5); /* Sombra superior */
+    font-size: 0.9em; /* Tamaño de fuente más pequeño para el texto del footer */
+}
+
+/* --- Diseño Responsivo (Media Queries) --- */
+
+/* Para pantallas medianas (tabletas, laptops pequeñas) */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px 15px; /* Margen lateral más pequeño en pantallas medianas */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    /* Navegación */
+    .main-nav ul {
+        gap: 15px; /* Menos espacio entre ítems del menú */
+    }
+
+    .menu-item {
+        padding: 8px 10px;
+    }
+
+    .menu-item .menu-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .main-nav a {
+        font-size: 1em;
+    }
+
+    /* Lista de componentes */
+    .componentes-list {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Columnas más pequeñas si es necesario */
+        padding: 15px;
+    }
+}
+
+/* Para pantallas pequeñas (smartphones) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Apila los ítems del menú verticalmente */
+        align-items: center; /* Centra los ítems apilados */
+    }
+
+    .menu-item {
+        width: 80%; /* Ocupa más ancho cuando está apilado */
+        margin-bottom: 10px; /* Espacio entre ítems apilados */
+    }
+
+    .componentes-list {
+        grid-template-columns: 1fr; /* Una sola columna para los componentes en pantallas muy pequeñas */
+    }
+}

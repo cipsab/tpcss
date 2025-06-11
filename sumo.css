@@ -1,0 +1,329 @@
+/* --- Variables CSS para colores (Recomendado para temas) --- */
+:root {
+    --color-background-dark: #1a1a1a;        /* Fondo principal muy oscuro */
+    --color-text-light: #f0f0f0;             /* Texto claro general */
+    --color-primary-accent: #61afef;         /* Azul brillante para acentos y títulos principales */
+    --color-secondary-accent: #56b6c2;       /* Cian para subtítulos */
+    --color-highlight: #c678dd;              /* Púrpura/rosa para elementos destacados */
+    --color-nav-bg: #0d1117;                 /* Fondo muy oscuro para la navegación */
+    --color-container-bg: #21262d;           /* Gris oscuro para el contenedor principal */
+    --color-card-bg: #2d333b;                /* Gris oscuro para tarjetas de proyecto y tabla */
+    --color-border: #444c56;                 /* Color para bordes sutiles */
+    --color-link: #61afef;                   /* Azul para enlaces */
+    --color-link-hover: #80c4fa;             /* Azul más claro al pasar el mouse */
+    --color-button-bg: #ff9800;              /* Naranja para el botón */
+    --color-button-hover: #e68900;           /* Naranja más oscuro para el botón al pasar el mouse */
+}
+
+/* --- Estilos Generales --- */
+html {
+    scroll-behavior: smooth; /* Mantiene el scroll suave por si hay anclas internas en esta página */
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    overflow-x: hidden; /* Evita scroll horizontal en móviles */
+}
+
+/* Contenedor principal para el contenido */
+.container {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background: var(--color-container-bg);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Estilos de Encabezados --- */
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 3em; /* Tamaño grande para el título principal */
+    color: var(--color-primary-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 2.4em;
+    color: var(--color-secondary-accent);
+    text-decoration: underline;
+    text-decoration-color: var(--color-highlight);
+    font-style: italic;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--color-border);
+    margin-top: 40px; /* Espacio para separar secciones */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: var(--color-highlight);
+    margin-bottom: 15px;
+}
+
+/* --- Estilos de Párrafos --- */
+p {
+    margin-bottom: 1em;
+    text-align: justify;
+    font-size: 1.1em;
+}
+
+/* --- Estilos de Enlaces --- */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+/* --- Estilos de Imágenes Generales (para el contenido, no iconos de nav) --- */
+img {
+    border-radius: 12px;
+    height: auto;
+    width: 100%; /* Ocupa el ancho completo del contenedor */
+    max-width: 600px; /* Ancho máximo para que no sea demasiado grande */
+    display: block; /* Para centrar con margin auto */
+    margin: 20px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+}
+
+/* --- Header principal de la página --- */
+.main-header {
+    background-color: var(--color-nav-bg);
+    padding-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.hero {
+    padding: 20px;
+    color: var(--color-text-light);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    color: var(--color-primary-accent);
+    margin-bottom: 20px;
+    text-decoration: none; /* No subrayado en el título hero */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.hero-image {
+    max-width: 700px;
+    height: 300px;
+    object-fit: cover;
+    margin: 20px auto;
+    border: 3px solid var(--color-highlight);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* --- Main Navigation (barra de navegación principal) --- */
+.main-nav {
+    background-color: var(--color-nav-bg);
+    padding: 15px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0; /* Ya está contenido en .main-header */
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Habilitar Flexbox */
+    justify-content: space-around; /* Distribuye el espacio equitativamente entre los elementos */
+    align-items: center; /* Alinea los elementos verticalmente al centro */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a la siguiente línea en pantallas pequeñas */
+    gap: 15px; /* Espacio mínimo entre los elementos */
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #1f232a; /* Fondo para cada "botón" de navegación */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover {
+    background-color: #323842;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.menu-item .menu-icon {
+    width: 60px; /* Tamaño adecuado para los iconos del menú */
+    height: 60px; /* Mantener la proporción */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+    border-radius: 50%; /* Iconos redondos */
+    margin-bottom: 8px; /* Espacio entre el icono y el texto */
+    border: 2px solid var(--color-highlight); /* Borde alrededor del icono */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-item:hover .menu-icon {
+    transform: scale(1.1); /* Ligeramente más grande al pasar el mouse */
+    border-color: var(--color-primary-accent); /* Cambia el color del borde */
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    color: var(--color-text-light); /* Color de texto normal para los enlaces */
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--color-highlight); /* Cambia al color del highlight al pasar el mouse */
+}
+
+/* --- Secciones de Proyectos --- */
+.project-section {
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: var(--color-container-bg); /* Opcional: Dar un fondo a las secciones */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Lista de tipos de sumo (ej. Nano Sumo, Mini Sumo) */
+.sumo-types-list {
+    list-style: none; /* Eliminar viñetas predeterminadas */
+    padding: 0;
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    gap: 30px; /* Espacio entre las tarjetas de tipo de sumo */
+}
+
+.sumo-types-list li {
+    background-color: var(--color-card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 calc(50% - 30px); /* Dos columnas en pantallas grandes */
+    max-width: calc(50% - 30px);
+    text-align: center;
+}
+
+.sumo-types-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.sumo-types-list img {
+    height: 150px; /* Altura uniforme para las imágenes de los tipos de sumo */
+    object-fit: contain; /* Asegura que la imagen se vea completa dentro de su caja */
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border: 1px solid var(--color-border);
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    background-color: var(--color-nav-bg);
+    color: #c9d1d9;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.5);
+    font-size: 0.9em;
+}
+
+/* --- Responsive Design (Media Queries) --- */
+@media (max-width: 992px) {
+    .sumo-types-list li {
+        flex: 1 1 calc(100% - 30px); /* Una columna en tablets */
+        max-width: calc(100% - 30px);
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px 15px;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-image {
+        height: 200px;
+    }
+
+    /* Navegación responsiva */
+    .main-nav ul {
+        flex-direction: column; /* Apila los elementos en columnas */
+        align-items: center; /* Centra los elementos apilados */
+        gap: 10px; /* Ajusta el espacio entre elementos apilados */
+    }
+
+    .menu-item {
+        width: 80%; /* Haz que los elementos ocupen más ancho en móvil */
+        max-width: 250px; /* Limita el ancho máximo para que no sean demasiado grandes */
+    }
+
+    .menu-item .menu-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .main-nav a {
+        font-size: 1em;
+    }
+
+    .sumo-types-list {
+        flex-direction: column; /* Asegura que se apilen en pantallas muy pequeñas */
+        align-items: center;
+    }
+    .sumo-types-list li {
+        max-width: 90%; /* Ajusta el ancho para móvil */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.7em;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
